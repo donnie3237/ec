@@ -4,6 +4,7 @@ import "./maxHeader.scss";
 import Header from "@/components/Header";
 import { createClient } from "@/utils/supabase/client";
 import Link from "next/link";
+import { useRouter } from 'next/navigation'
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -16,6 +17,7 @@ import {
 export default function maxHeader() {
 	const [user, setUser] = useState<any>();
 	const supabase = createClient();
+	const router = useRouter()
 
 	useEffect(() => {
 		async function fetchUser() {
@@ -25,13 +27,13 @@ export default function maxHeader() {
 		fetchUser();
 	}, []);
 	async function Logout() {
-		const logout = await supabase.auth.signOut();
-		window.location.reload();
+		await supabase.auth.signOut();
+		window.location.reload()
 	}
 	return (
-		<div className="flex justify-between px-6 shadow-sm h-[80px] w-full sticky top-0">
+		<div className="hd flex justify-between px-6 shadow-sm h-[80px] w-full sticky top-0 bg-white">
 			<div className="logo flex items-center">
-				<h1 className="font-bold space-x-1 mr-4">DOSE-SHOP</h1>
+				<h1 className="font-bold space-x-1 mr-4" onClick={()=> router.push('/') }>DOSE-SHOP</h1>
 				<Header />
 			</div>
 			<div className="login h-full items-center flex">
@@ -53,7 +55,7 @@ export default function maxHeader() {
 							<DropdownMenuContent>
 								<DropdownMenuLabel>My Account</DropdownMenuLabel>
 								<DropdownMenuSeparator />
-								<DropdownMenuItem>Profile</DropdownMenuItem>
+								<DropdownMenuItem onClick={() => router.push('/profile')}>Profile</DropdownMenuItem>
 								<DropdownMenuItem>Cart</DropdownMenuItem>
 								<DropdownMenuItem onClick={Logout}>Logout</DropdownMenuItem>
 							</DropdownMenuContent>

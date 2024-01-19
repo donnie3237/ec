@@ -74,19 +74,19 @@ export default function NavigationMenuDemo() {
 									</a>
 								</NavigationMenuLink>
 							</li>
-							<ListItem href="/phone" title="smartphone">
+							<ListItem href="/phone" title="Smartphone">
 								Re-usable components built using Radix UI and Tailwind CSS.
 							</ListItem>
-							<ListItem href="/docs/installation" title="Labtop">
+							<ListItem href="/labtop" title="Labtop">
 								How to install dependencies and structure your app.
 							</ListItem>
-							<ListItem href="/docs/primitives/typography" title="automotive">
+							<ListItem href="/robot" title="Robotics">
 								Styles for headings, paragraphs, lists...etc
 							</ListItem>
 						</ul>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
-				<NavigationMenuItem>
+				{/* <NavigationMenuItem>
 					<NavigationMenuTrigger>clothes</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
@@ -101,11 +101,11 @@ export default function NavigationMenuDemo() {
 							))}
 						</ul>
 					</NavigationMenuContent>
-				</NavigationMenuItem>
+				</NavigationMenuItem> */}
 				<NavigationMenuItem>
-					<Link href="/docs" legacyBehavior passHref>
+					<Link href="/contact" legacyBehavior passHref>
 						<NavigationMenuLink className={navigationMenuTriggerStyle()}>
-							service
+							Contact
 						</NavigationMenuLink>
 					</Link>
 				</NavigationMenuItem>
