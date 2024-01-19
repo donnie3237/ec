@@ -151,7 +151,7 @@ export default function Component() {
   )
 }
 
-function BotIcon(props) {
+function BotIcon(props:any) {
   return (
     <svg
       {...props}
@@ -176,7 +176,7 @@ function BotIcon(props) {
 }
 
 
-function FacebookIcon(props) {
+function FacebookIcon(props:any) {
   return (
     <svg
       {...props}
@@ -196,7 +196,7 @@ function FacebookIcon(props) {
 }
 
 
-function InstagramIcon(props) {
+function InstagramIcon(props:any) {
   return (
     <svg
       {...props}
@@ -218,7 +218,7 @@ function InstagramIcon(props) {
 }
 
 
-function TwitterIcon(props) {
+function TwitterIcon(props:any) {
   return (
     <svg
       {...props}
